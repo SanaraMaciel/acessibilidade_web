@@ -1,0 +1,47 @@
+2.16. Recursos e ferramentas
+Organizações e especificações
+World Wide Web Consortium (W3C) (link para novo site)
+Web Content Accessibility Guidelines (WCAG) Versão 2.0 (link para novo site)
+Web Content Accessibility Guidelines (WCAG) Versão 2.0 (português) (link para novo site)
+Modelo de Acessiblidade em Governo Eletrônico (eMAG) (link para novo site)
+Validadores de código
+Validador de Extensible Hypertext Markup Language (XHTML) e Hypertext Markup Language (HTML) (link para novo site)
+Validador de Folhas de Estilo (CSS) (link para novo site)
+Validador de links (link para novo site)
+Validadores automáticos de acessibilidade
+Avaliador e Simulador de Acessibilidade de Sítios (ASES) (WAI e eMAG) (link para novo site)
+AccessMonitor (WAI) (link para novo site)
+Web Accessibility Tool (WAVE) (WAI) (link para novo site)
+Cynthia Says (WAI) (link para novo site)
+Hera (WAI) (link para novo site)
+Lift (WAI) (link para novo site)
+TAW (WAI) (link para novo site)
+Examinator (WAI) (link para novo site)
+Functional Accessibility Evaluator 1.1 (WAI e Section 508) (link para novo site)
+Barra de ferramentas para avaliação de acessibilidade
+Web Accessibility Toolbar for Internet Explorer (para Internet Explorer) (link para novo site)
+Accessibility Evaluation Toolbar (para Firefox) (link para novo site)
+Ferramentas para análise de relação de contraste
+Luminosity Colour Contrast Ratio Analyser (online) (link para novo site)
+Contrast Analyser (online) (link para novo site)
+Check my colours (online) (link para novo site)
+Contrast Analyser 2.2 (link para novo site)
+Simulador de Navegador
+Browsershots (link para novo site)
+Navegadores Textuais
+Lynx (link para novo site)
+LynxViewer (simulador) (link para novo site)
+Simulador para Cegueira Cromática (Daltonismo)
+Vischeck (link para novo site)
+Leitores de Tela
+Jaws for Windows - Leitor de tela americano produzido pela Freedom Scientific (link para novo site)
+NVDA - Leitor de tela gratuito e de código aberto para Windows (link para novo site)
+Orca - Leitor de tela gratuito e de código aberto para Linux (link para novo site)
+VoiceOver - Leitor de tela para MAC OS (link para novo site)
+Windows Eyes - Leitor de tela canadense fabricado pela GW Micro (link para novo site)
+DOSVOX - Interface especializada desenvolvida pela UFRJ (link para novo site)
+Material de apoio
+Material de apoio fornecido pelo Departamento de Governo Eletrônico, incluindo tutoriais de acessibilidade e modelos de checklists (link para novo site)
+Cartilha de acessibilidade na Web do W3C (Formato PDF - Tamanho 4,8MB)
+Lista completa de ferramentas para avaliação de acessibilidade disponibilizada pelo W3C (em inglês) (link para novo site)
+Building Accessible Websites (em inglês) – livro online bastante completo sobre como desenvolver um site acessível (link para novo site)

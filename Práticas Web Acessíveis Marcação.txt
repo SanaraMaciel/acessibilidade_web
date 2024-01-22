@@ -1,0 +1,86 @@
+2.5. Práticas Web acessíveis 
+Marcação
+Padrões Web e uso semântico do HTML
+
+Clique no(s) item(s) abaixo para navegar pelo infográfico
+Áreas de informação
+x
+É importante estabelecer uma organização lógica por blocos de conteúdo em um site, tornando-o fácil de navegar e compreender. As divisões de blocos de conteúdo mais comuns são "topo", "conteúdo", "menu" e "rodapé". Nas páginas internas deve-se manter uma mesma divisão para que o usuário se familiarize mais rapidamente com a estrutura do site, que deverá ser padronizada. É importante destacar, entretanto, que a página inicial pode ter uma divisão diferenciada, pois normalmente ela contém mais elementos. A divisão em blocos de conteúdo representa a base para a utilização dos atalhos, permitindo que o usuário tenha rápido acesso à área desejada.
+
+Leitura e tabulação
+x
+Deve-se criar o código HTML com uma sequência lógica de leitura para percorrer links, controles de formulários e objetos. Essa sequência é determinada pela ordem que se encontra no código HTML.
+
+É recomendável disponibilizar o bloco do conteúdo principal da página antes do bloco de menu. Isso facilita o acesso por quem navega via teclado, permitindo um acesso mais ágil, sem a necessidade de navegar por todos os itens de menu antes de chegar ao conteúdo. Apesar de atalhos (como links e teclas) auxiliarem nesse sentido, alguns usuários não sabem e podem ser de difícil utilização para pessoas com deficiência motora. Algumas das formas não funcionam em interfaces mais simples, como o WebVox do DOSVOX. Lembrando que ao utilizar CSS, visualmente, os blocos de menu e conteúdo podem ser dispostos em qualquer local da página.
+
+OBS: Em alguns casos, pode-se forçar a navegação via atributo tabindex. No entanto, se houver a necessidade de utilizar o tabindex, o mesmo deverá ser utilizado com a semântica correta e deverá ser verificado manualmente se o fluxo fornecido é realmente o desejado. O uso do tabindex pode resultar em uma ordem e tabulação inconsistente.
+
+Quando pensamos em facilitar a leitura, especialmente para quem utiliza leitor de tela, é importante separar corretamente os links que estão em uma sequência (links adjacentes). Os mesmos devem ser separados por mais do que simples espaços, para que não fiquem confusos durante a leitura. Para isso, é recomendado o uso de listas, onde cada elemento dentro da lista é um link. As listas podem ser estilizadas visualmente com CSS para que os itens sejam mostrados da maneira desejada, como um ao lado do outro.
+
+Caso os links estejam no meio de um parágrafo de conteúdo texto, pode-se utilizar vírgulas, parênteses, colchetes, pipe, entre outros, para fazer a separação.
+
+Exemplo incorreto:
+
+"<p id="menu"> 
+<a href="#menu">Pular o menu</a><br /> 
+<a href="home.html">Home</a><br /> 
+<a href="pesquisa.html">Pesquisa</a><br /> 
+<a href="mapasite.html">Mapa do Site</a> 
+</p> 
+<!-- Conteudo do Site -->
+Exemplo correto:
+
+<ul id="menu"> <li> 
+<a href="home.html">Home</a></li> 
+<li> <a href="pesquisa.html">Pesquisa</a></li> 
+<li> <a href="mapasite.html">Mapa do Site</a></li> 
+</ul> 
+<!-- Conteudo do Site -->
+
+Âncoras
+x
+As âncoras podem ser denominadas como “links para uma mesma página”, possibilitando aos usuários navegarem por pontos específicos em uma página. As âncoras devem estar adequadamente descritas de acordo com sua função, e quando utilizadas devem ancorar o foco ao ponto indicado. Esse formato de link é geralmente empregado em casos em que o conteúdo apresentado é bastante extenso, sendo as âncoras inseridas de modo a formarem um sumário para remeter a partes específicas do conteúdo (capítulos, seções, etc.). Após cada seção ou capítulo é essencial oferecer uma âncora para retornar ao sumário.
+
+Exemplo de sumário com âncoras para as partes do conteúdo:
+
+Exemplo de sumário com âncoras para as partes do conteúdo
+
+Ao clicarmos no link "Introdução", o foco do teclado é remetido para o início desta seção. Repare no exemplo a seguir o link "Voltar ao sumário", presente no final da seção.
+
+Página demostrando apenas a seção Introdução com o link voltar ao sumário no final da seção
+
+Exemplo de âncora para a seção "Agradecimentos":
+
+Repare que o destino da âncora é representado pelo sinal de # (cerquilha ou sustenido) seguido do id da seção de destino:
+
+<li><a href="#agradecimentos" title="#">Agradecimentos</a></li> 
+<h2 id="agradecimentos">Agradecimentos</h2>
+Exemplo de âncora para voltar ao sumário:
+
+<p class="voltar"><a href="#sumario">Voltar ao sumário</a></p> <div id="sumario">
+
+Atalhos
+x
+Remetem a pontos estratégicos nas páginas, permitindo que o usuário navegue com maior agilidade, uma vez que poderá ir diretamente a pontos específicos das páginas. Os atalhos devem funcionar em todas as páginas do site, sendo indispensável disponibilizar dicas dos mesmos no topo das páginas. Além disso, os atalhos devem estar adequadamente descritos, informando o local para o qual remetem. Devem existir atalhos para, no mínimo, ir ao início do conteúdo, ao início do menu e ao campo de busca. É importante que as dicas dos atalhos sejam apenas números, já que a tecla de ativação (Alt, Shift + Alt, etc.) varia conforme o navegador.
+
+Exemplo de atalhos para conteúdo, menu e caixa de busca:
+
+Atalhos de teclado para Conteúdo[1], Menu[2] e Pesquisar[3]
+
+<ul id="atalhos"> 
+<li><a href="#iniciodoconteudo">Conteúdo [1]</a></li> 
+<li><a href="#iniciodomenu">Menu [2]</a></li> 
+<li><a href="#palavra" id="teste">Pesquisar [3]</a></li> 
+</ul>
+Conteúdo da página:
+
+<div id="conteudo"> 
+<a href="#iniciodoconteudo" id="iniciodoconteudo" accesskey="1" class="oculto">Início do conteúdo</a> 
+<!-- conteúdo --> </div>
+Links Indicadores
+
+Links associados aos atalhos de teclado, que agilizam a navegação, e auxiliam os usuários de leitores de tela a compreender e organizar o conteúdo visual de forma lógica, pois definem blocos nas páginas. Os mais comuns e recomendados são "Início de Menu", "Fim de Menu", "Início de Conteúdo" e "Fim de Conteúdo", podendo também, se possível, inserir links indicadores de início e fim de formulários e início e fim de tabelas. Os links indicadores poderão estar ocultos na página, ou seja, não aparecerão visualmente, mas serão lidos pelos leitores de tela, facilitando muito a navegação e compreensão do site pelo usuário com deficiência visual.
+
+Exemplo de link indicador de final de conteúdo:
+
+<a href="#finaldoconteudo" class="oculto">Final do conteúdo</a>

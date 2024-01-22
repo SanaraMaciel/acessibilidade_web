@@ -1,0 +1,227 @@
+2.8. Práticas Web acessíveis
+Apresentação/Design
+
+Contraste
+x
+Contrastes: Vermelho no azul e verde no vermelho são difíceis de ler. Amarelo no azul, branco no preto ou preto no branco são fáceis de ler
+
+Uma boa relação de contraste entre o texto e o plano de fundo é fundamental para que todos possam visualizar as informações de forma clara e sem grandes esforços. 
+Além disso, um bom contraste é essencial para pessoas com baixa visão, pessoas com daltonismo e aquelas que utilizam monitores monocromáticos.
+
+Além de escolher cores que tenham uma boa relação de contraste, é preciso tomar cuidado com imagens utilizadas de plano de fundo. 
+Um fundo decorado ou em forma de figura, como uma paisagem, por exemplo, torna o conteúdo da página de difícil visualização, além de desviar a atenção do usuário. 
+Se possível, evite utilizar imagens como plano de fundo ou planos de fundo decorados, enfeitados, com listras, círculos, bordas, marca d’água, etc.
+
+A relação de contraste pode ser encontrada dividindo-se o valor da luminosidade relativa da cor mais clara de um dos planos pelo valor da luminosidade relativa da cor 
+mais escura do outro plano. Levando-se em consideração a perda de percepção do contraste resultante da baixa acuidade visual, cromodeficiência ou perda de sensibilidade 
+ao contraste devido ao envelhecimento, é recomendada aqui uma relação de contraste, de, no mínimo, 4,5:1.
+
+Verde no cinza e amarelo no azul sendo demostrados em 3 tonalidades diferentes representado o contraste baixo, suficiente e alto
+
+Apenas olhando para uma página, já podemos ter uma ideia se ela apresenta um bom contraste ou não. No entanto, para garantirmos um contraste otimizado, 
+podemos utilizar ferramentas gratuitas, disponíveis online para analisar a relação de contraste, como, por exemplo:
+
+Luminosity Colour Contrast Ratio Analyser (link para novo site)
+Color Contrast Analyser (link para novo site)
+Check my colours (link para novo site)
+No "Check my colours" você fornece o endereço de uma página da Web, clica em "check" e ele lhe mostrará uma lista contendo o resultado das taxas de contraste 
+entre o plano de fundo e o primeiro plano dos diversos elementos da página, conforme podemos ver nas figuras a seguir.
+
+Página de resultados do Checkmycolours / Página inicial do Checkmycolours
+
+No exemplo a seguir, utilizamos o serviço online "Luminosity Colour Contrast Ratio Analyser", especificamos os valores (em notação hexadecimal) das cores de fundo 
+(Background Colour) e da fonte (Foreground Colour) e calculamos a relação de contraste (Calculate Luminosity Contrast Ratio). Após clicarmos no botão, 
+é mostrado um exemplo de como ficaria visualmente este contraste utilizando-se a fonte em tamanho grande e a fonte em tamanho normal, além da relação de contraste 
+(contrast ratio), que, nesse caso, foi de 7,74:1, ou seja, bem acima do recomendado 4,5:1, o que indica que estas duas cores apresentam um excelente contraste entre si.
+
+Página de resultados do LuminosityColourContrastRatioAnalyser
+
+A importância do contraste para usuários com Daltonismo
+A deficiência de cor vermelho/verde é o tipo mais comum de Daltonismo. Por isso, deve-se evitar a utilização de contrastes entre essas duas cores.
+
+Utilizando combinação de cores verde/vermelho: com a deficiência de cor não é possível perceber o contraste entre as cores.
+
+Representação de como uma pessoa com visão normal e uma pessoa com daltonismo enxerga a imagem com combinações de cores verde e vermelho
+
+Utilizando combinação de cores verde/lilás: mesmo com a deficiência de cor, ainda é possível perceber o contraste.
+
+Representação de como uma pessoa com visão normal e uma pessoa com daltonismo enxerga a imagem com combinações de cores verde e lilás
+
+Fonte:
+JENNY, B; KELSO, N.V. Color Design for the Color Vision Impaired (Documento PDF - Tamanho 706 Kb)
+
+Cor e outros elementos
+x
+As informações não podem ser transmitidas unicamente por meio de características sensoriais, tais como cor, forma, tamanho, localização visual, 
+orientação ou som. Para compreendermos melhor este ponto, vamos analisar alguns exemplos.
+
+ 
+
+Exemplo 1:
+
+Lista de produtos (os itens em vermelho não estão disponíveis):
+
+Produto 1
+Produto 2
+Produto 3
+Produto 4
+Produto 5
+Neste exemplo, é preciso que o usuário consiga enxergar e distinguir cores para saber quais produtos estão indisponíveis. 
+Uma solução para esse caso seria, além de utilizar a cor como diferencial, informar ao lado do produto que ele encontra-se indisponível (Produto 3 (indisponível))
+
+ 
+
+Exemplo 2:
+
+O link para a página do concurso público está disponível no canto superior direito da página.
+
+Repare que, no exemplo acima, é necessário que o usuário consiga visualizar uma posição específica da página. 
+Nesse caso, o ideal seria fornecer o link no próprio contexto, facilitando o acesso por todos os usuários.
+
+ 
+
+Exemplo 3:
+
+Para salvar o questionário, clique no botão redondo. Para sair do questionário sem salvá-lo, clique no botão quadrado. 
+Você poderá retornar mais tarde para preencher este questionário.
+
+Caixa contendo dois botões: um redondo e verde do lado esquerdo e um quadrado e azul do lado direito
+No exemplo acima, uma pessoa cega não saberia qual o formato dos botões e nem o leitor de tela teria como interpretar esse tipo de informação sensorial para 
+transmitir ao usuário. Nesse caso, seria necessário fornecer informações adicionais aos botões, como uma descrição que identifique a sua função, ou então, 
+o seu formato, de modo que o leitor de tela possa ler esta informação ao usuário.
+
+ 
+
+Exemplo 4:
+
+Formulário solicitando dados pessoais onde os campos obrigatórios aparecem com a cor vermelha
+ 
+
+Repare que o formulário acima indica os campos obrigatórios apenas através da mudança de cor. Um usuário que não pode ver, 
+não saberá quais campos são de preenchimento obrigatório.
+
+Uma solução para o caso de campos obrigatórios em formulários seria inserir um asterisco em forma de imagem ao lado de cada campo obrigatório, 
+fornecendo uma descrição no atributo alt para esta imagem, que poderia ser "campo obrigatório" ou, simplesmente, "obrigatório".
+
+ 
+
+<label for="nome">Nome: 
+<img src="images/icon_asterisk.gif" alt="obrigatório"/> 
+</label> 
+<input type=text name="nome" id="nome" />
+ 
+
+Para quem enxerga, basta visualizar o asterisco para distinguir os campos obrigatórios. Com o leitor de tela, 
+a informação do alt seria lida para o usuário. No caso do exemplo de código acima, o leitor iria informar algo do tipo: "Campo de edição, nome, obrigatório".
+
+Outra solução é utilizar uma tag span contendo a informação "obrigatório", que será ocultada por CSS e, em seu lugar, inserimos uma imagem de um asterisco.
+
+ 
+
+<label for="nome">Nome: 
+<span>Obrigatório<span/> 
+</label> 
+<input type=text name="nome" id="nome" />
+ 
+
+Obs.: Mecanismos para ocultar elementos e seus efeitos na acessibilidade:
+
+Formas de ocultar elementos e efeitos na acessibilidade
+CSS	Efeito na tela	Efeito na acessibilidade
+visibility:hidden;	O elemento fica oculto, mas continua a ocupar o espaço que normalmente ocuparia	O conteúdo é ignorado pelos leitores de tela
+display:none;	O elemento fica oculto e não ocupa espaço	O conteúdo é ignorado pelos leitores de tela
+height: 0; width: 0; overflow: hidden;	O elemento fica oculto e não ocupa espaço	O conteúdo é ignorado pelos leitores de tela
+text-indent: -999em;	O conteúdo é movido para "fora da tela", não sendo mais visível, mas links podem ser focalizados de maneira imprevisível	
+Os leitores de tela acessam o conteúdo, mas somente texto e elementos inline
+position: absolute; left: -999em;	O conteúdo é removido de sua posição, não ocupando espaço e é movido para "fora da tela", ficando oculto	
+Os leitores de tela acessam o conteúdo
+
+Foco Visível
+x
+Para pessoas com baixa visão, é muito importante que seja possível perceber facilmente onde está o foco do teclado, garantindo uma maior facilidade de navegação. 
+Assim, a área que recebe o foco pelo teclado deve ser claramente marcada, devendo a área de seleção ser passível de ser clicada.
+
+ 
+
+Por padrão, links e elementos de formulário já apresentam a borda destacada ao receberem o foco do teclado. Essa borda pode ser modificada via CSS para melhorar o destaque, 
+mas não deverá ser removida. Recomenda-se que a espessura mínima da borda seja de 2px.
+
+ 
+
+Exemplo:
+
+CSS
+
+ 
+
+a:focus, a:hover { 
+border: 2px solid #F00; 
+}
+ 
+
+A pseudo-classe :focus é utilizada para definir o estilo de qualquer elemento HTML que receber o foco do teclado, 
+como links e elementos de formulário. A pseudo-classe :hover é utilizada para definir o estilo de um elemento quando passa-se o mouse sobre ele.
+
+ 
+
+HTML
+
+<ul>
+<li><a href="/acessibilidade/index.php">Página Inicial</a></li>
+<li><a href="/acessibilidade/eventos.php">Eventos</a></li>
+<li><a href="/acessibilidade/quemsomos.php">Quem Somos</a></li> 
+<li><a href="/acessibilidade/ead.php">Ensino a Distância (EaD)</a></li>
+<li><a href="/acessibilidade/videoaulas.php">Vídeoaulas</a></li>
+<li><a href="/acessibilidade/video.php">Ví­deo em Libras</a></li>
+<li><a href="/acessibilidade/oa.php">Objetos de Aprendizagem</a></li>
+<li><a href="/acessibilidade/trabalhos.php">Trabalhos Realizados</a></li>
+<li><a href="/acessibilidade/mapa.php">Mapa do Site</a></li> </ul>
+Lista com itens de menu, com um dos itens recebendo o foco do teclado claramente demarcado com uma borda vermelha.
+
+Redimensionamento
+x
+A página deve continuar legível e funcional mesmo quando redimensionada para até 200%. Assim, é preciso garantir que, quando a página for redimensionada, 
+não ocorram sobreposições nem o aparecimento de uma barra horizontal.
+
+ 
+
+Exemplo:
+
+Exemplo de sítio no qual, à medida que ocorre o redimensionamento, o leiaute se ajusta para que não ocorram “quebras”.
+
+Visualização padrão:
+
+ 
+
+Página de um site contendo menu e conteúdo em sua visualização padrão.
+
+ 
+
+Visualização com redimensionamento de 200%:
+
+ 
+
+Página de um site contendo menu e conteúdo redimensionados em 200% sem perda de funcionalidade.
+
+Design Responsivo
+
+Além de permitir o redimensionamento sem perda de funcionalidade, o leiaute do sítio deve adequar-se à resolução de tela do dispositivo pelo qual está sendo acessado, 
+já que, atualmente, não existe mais um padrão de resolução de tela para os computadores e há uma crescente utilização de dispositivos móveis.
+
+A melhor maneira de tratar as diferentes resoluções de tela é através do design responsivo, que trata especificamente da forma que o site será renderizado dependendo 
+do tamanho em pixels da tela que o dispositivo possui e seu objetivo. O design responsivo trata a resolução de tela considerando faixas de resolução, 
+através de diferentes folhas de estilo para tratamento das faixas de resolução de tela. Para tratar a folha de estilo, basta inserir no mesmo documento comandos 
+de Media Queries contendo a resolução máxima de apresentação e as alterações desejadas logo depois.
+
+ 
+
+Exemplo de leiaute responsivo, que se adapta conforme a resolução da tela:
+
+ 
+
+Página de um site sendo apresentada em três diferentes resoluções de tela.
+
+Saiba Mais sobre design responsivo
+
+O Cenário do Design Responsivo (link para novo site)
+

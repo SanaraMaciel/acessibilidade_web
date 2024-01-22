@@ -1,0 +1,49 @@
+2.6. Práticas Web acessíveis 
+Comportamento
+
+Independência de dispositivo
+x
+Eventos que funcionam somente pelo mouse são um grande problema para a acessibilidade, pois nem todas as pessoas conseguem utilizar o mouse . Quem utiliza leitor de tela, por exemplo, navega exclusivamente pelo teclado. Pessoas com determinados tipos de deficiência física poderão não ter a habilidade de usar o mouse convencional e poderão utilizar teclados e mouses adaptados. Por isso, todas as funções de uma página devem ser dispositivo-independentes, ou seja, devem funcionar pelo mouse , teclado ou outro dispositivo. Além disso, o foco do teclado não deve ficar fixado ou “preso” em algum elemento, pois o usuário deve poder percorrer toda a página pelo teclado facilmente.
+
+Se forem utilizados eventos de JavaScript específicos para mouse , devem ser utilizados os correspondentes para teclado:
+
+Eventos correspondentes para mouse e teclado
+Evento do teclado	Evento correspondente do mouse
+onkeydown	onmousedown
+onkeyup	onmouseup
+onkeypress	onclick
+onfocus	onmouseover
+onmouseover	onmouseout
+ 
+
+Dê preferência por manipuladores de eventos que são dispositivo-independentes (funcionam pelo mouse , teclado ou outro), como: onFocus, onBlur, onSelect, onChange, e onClick (quando o onClick for utilizado em um link ou elemento de formulário).
+
+Prefira utilizar o onclick/onkeypress em vez de onmousedown/onkeydown e onmouseup/onkeyup, pois estes últimos fazem com que o evento seja disparado automaticamente através do teclado, o que é um grande problema para a acessibilidade.
+
+Por fim, sempre teste o site navegando por todo o conteúdo somente pelo teclado, com setas e Tab, e em diferentes navegadores.
+
+Alterações temporais do conteúdo
+x
+É muito comum a utilização de conteúdos que se movem, como os slideshows. Esse tipo de elemento não deve mover-se automaticamente, pois o usuário é quem deve decidir se quer “rolar” o conteúdo ou não. Assim, devem ser oferecidos controles para iniciar, pausar e reiniciar tais rolagens. Esses controles devem ser acessíveis também pelo teclado e devem estar bem descritos, para quem utiliza leitor de tela.
+
+Atualização e redirecionamento automáticos
+x
+Quando ocorre uma mudança, atualização ou redirecionamento repentino na página, o usuário pode sentir-se confuso ou desorientado, especialmente se estiver utilizando algum recurso de Tecnologia Assistiva, como um leitor de tela, por exemplo. Isso ocorre em páginas com atualização ou redirecionamento automáticos.
+
+A atualização automática periódica – muito utilizada por canais de notícias - é comumente realizada através do uso do o atributo http-equiv com conteúdo “refresh” do elemento meta no HEAD do documento (ex: <meta http-equiv="refresh" content="30" />, onde a página seria recarregada a cada 30 segundos).
+
+Como exemplo de uma boa prática, em uma interface Web para e-mail (Webmail), um desenvolvedor pode fornecer um botão ou link para buscar novos e-mails recebidos em vez de atualizar automaticamente.
+
+Em páginas onde a atualização é absolutamente necessária, o usuário deverá ser informado que a página é atualizada automaticamente.
+
+Quanto ao redirecionamento automático, o mesmo deve ocorrer de forma transparente para o usuário. Ou seja, não devem ser utilizadas marcações para redirecionar a uma nova página, como o uso do atributo http-equiv com conteúdo “refresh” do elemento META. (Ver ePWG - Cartilha de Codificação (link para novo site)).
+
+Limite de tempo
+x
+Em uma página onde há limite de tempo para realizar uma tarefa deve haver a opção de desligar, ajustar ou prolongar esse limite. Essa recomendação não se aplica a eventos em que o limite de tempo é absolutamente necessário. Deve-se lembrar que, em ambos os casos, o limite de tempo deve ser informado.
+
+Exemplo: Na inserção de dados em um formulário para obtenção de um benefício ou consulta a processo, o cidadão deve ter tanto tempo quanto for necessário para o preenchimento de seus dados. O site deve possuir um mecanismo que permita ao cidadão aumentar o limite de tempo, disponibilizando, por exemplo, um botão para aumentar o tempo em 5 minutos.
+
+Intermitência de tela
+x
+Não devem ser utilizados efeitos visuais piscantes, intermitentes ou cintilantes. Em pessoas com epilepsia fotosensitiva, o cintilar ou piscar pode desencadear um ataque epilético. Além disso, elementos piscantes podem causar desconforto, desatenção e confusão para os usuários.

@@ -1,0 +1,46 @@
+4 princípios
+1° Princípio: Perceptível - a informação e os componentes da interface do usuário têm de ser apresentados aos usuários em formas que eles possam perceber.
+2° Princípio: Operável - Os componentes de interface de usuário e a navegação têm de ser operáveis.
+3° Princípio: Compreensível - A informação e a operação da interface de usuário têm de ser compreensíveis.
+4° Princípio: Robusto - O conteúdo tem de ser robusto o suficiente para poder ser interpretado de forma concisa por diversos agentes do usuário, incluindo recursos de tecnologia assistiva.
+Recomendações pertencentes a cada princípio
+1° Princípio: Perceptível
+
+1.1 Fornecer alternativas textuais para qualquer conteúdo não textual.
+1.2 Fornecer alternativas para multimídia.
+1.3 Criar conteúdo que possa ser apresentado de modos diferentes sem perder informação ou estrutura.
+1.4 Tornar mais fácil aos usuários a visualização e audição de conteúdos incluindo as separações das camadas da frente e de fundo.
+2° Princípio: Operável
+
+2.1 Fazer com que todas as funcionalidades estejam disponíveis no teclado.
+2.2 Prover tempo suficiente para os usuários lerem e usarem o conteúdo.
+2.3 Não projetar conteúdo de uma forma conhecida por causar ataques epiléticos.
+2.4 Prover formas de ajudar os usuários a navegar, localizar conteúdos e determinar onde se encontram.
+3° Princípio: Compreensível
+
+3.1 Tornar o conteúdo de texto legível e compreensível.
+3.2 Fazer com que as páginas da Web apareçam e funcionem de modo previsível.
+3.3 Ajudar os usuários a evitar e corrigir erros.
+4° Princípio: Robusto
+
+4.1 Maximizar a compatibilidade entre os atuais e futuros agentes do usuário, incluindo os recursos de tecnologia assistiva.
+
+Critérios de sucesso
+Para cada recomendação existem critérios de sucesso, que são pontos específicos que devem ser atingidos.
+
+Exemplo:
+
+Recomendação 3.3 - Assistência de Entrada: Ajudar os usuários a evitar e corrigir erros
+Critério de sucesso 3.3.1 - Identificação do Erro: Se um erro de entrada for automaticamente detectado, o item que apresenta erro é identificado e o erro é descrito ao usuário por texto. (Nível A)
+E para cada critério de sucesso estão disponíveis técnicas específicas com exemplos de como o objetivo do critério pode ser atingido e testado.
+
+Cada critério de sucesso é indicado por um nível de conformidade, que pode ser A, AA ou AAA:
+Nível A: barreiras mais significativas de acessibilidade. Estar em conformidade apenas com os critérios de nível A não garante um site altamente acessível.
+Nível AA: estar em conformidade com todos os critérios de sucesso de nível AA garante um site bastante acessível, ou seja, o site será acessível para a maioria dos usuários, 
+sob a maior parte das circunstâncias e utilizando-se a maioria das tecnologias.
+Nível AAA: o nível de conformidade triplo A é bastante meticuloso, ou seja, visa garantir um nível otimizado de acessibilidade.
+A maioria dos critérios de sucesso de nível AAA refere-se a situações bastante específicas, normalmente objetivando refinar os critérios de sucesso de nível AA.
+Manter uma conformidade com certos critérios de sucesso de nível AAA pode ser um processo custoso e, às vezes, de difícil implementação.
+No entanto, muitos sites não possuem conteúdo que se aplica aos critérios de sucesso de nível AAA.
+
+WCAG 2.0 versão em português (link para novo site)

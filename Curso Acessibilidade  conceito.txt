@@ -1,0 +1,19 @@
+O governo brasileiro, seguindo o exemplo de outros países, desenvolveu suas próprias diretrizes, reunidas no documento chamado de eMAG.
+
+O eMAG – Modelo de Acessibilidade em Governo Eletrônico – é um documento com recomendações a serem consideradas para que o processo de acessibilidade 
+dos sítios e portais do governo brasileiro seja conduzido de forma padronizada e de fácil implementação.
+
+2.4. Práticas Web acessíveis
+Tim Berners-Lee, diretor do W3C afirma que o poder da Web está na sua universalidade. Para ele, “ser acessada por todos, independente de deficiência, é um aspecto essencial”.
+
+Nesta seção, vamos aprender como desenvolver conteúdo Web mais acessível.
+
+Seu código deve ser acessível ao maior número de usuários possível, incluindo:
+
+Usuários de leitor de tela
+Quem navega somente pelo teclado
+Quem utiliza navegador com JavaScript desabilitado
+Usuários de dispositivos móveis
+Quem utiliza outros recursos de Tecnologia Assistiva
+Usuários inexperientes
+Entre outros...

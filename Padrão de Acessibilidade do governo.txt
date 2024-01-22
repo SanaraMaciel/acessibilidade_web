@@ -1,0 +1,96 @@
+2.14. Práticas Web acessíveis
+Padrão de Acessibilidade Digital do Governo
+
+Esta seção demonstra os elementos padronizados de acessibilidade digital que devem estar presentes em todos os sítios do governo federal para facilitar o acesso de todos. 
+Esses elementos incluem:
+
+
+Atalhos
+x
+Os atalhos que deverão existir nas páginas do Governo Federal são os seguintes:
+
+ 
+
+1: para ir ao conteúdo
+2: para ir ao menu principal
+3: para ir à caixa de pesquisa
+ 
+
+Atalhos ir para o conteúdo, ir para o menu e ir para a busca.
+ 
+
+Atalhos para outros pontos, como para o rodapé, poderão ser disponibilizados também, mas os três atalhos citados anteriormente são obrigatórios nos sites governamentais, seguindo-se o padrão da numeração.
+
+ 
+
+As dicas dos atalhos deverão ser disponibilizadas na barra de acessibilidade e na página sobre a acessibilidade do sítio.
+
+--- geralmente são as teclas Alt + n°
+
+Alto contraste
+x
+A opção de alto contraste deve gerar uma página em que a relação de contraste entre o plano de fundo e os elementos do primeiro plano seja de, no mínimo 7:1 (contraste otimizado). Desta forma, a folha principal de alto contraste deve obedecer à seguinte configuração de cores:
+
+ 
+
+Cor de fundo: independente da cor utilizada, ela deve ser alterada para preto (#000000).
+Cor de texto: independente da cor utilizada, ela deve ser alterada para branco (#FFFFFF).
+Links: o modo normal do link deve ser sublinhado (para que ele se diferencie do texto normal), assim como o modo hover e o modo active. O link deve ser alterado para amarelo (#FFF333).
+Ícones: todos os ícones devem ser brancos.
+Linhas e Contornos: as linhas e os contornos de elementos devem ser alterados para branco.
+ 
+
+Página de acessibilidade
+x
+Esta página apresenta os recursos de acessibilidade presentes no sítio, como as teclas de atalho disponíveis, as opções de alto contraste, detalhes sobre testes de acessibilidade realizados (validadores automáticos, leitores de tela e validação humana) no sítio e outras informações pertinentes a respeito de sua acessibilidade. O link para a página contendo os recursos de acessibilidade deve ser disponibilizado na barra de acessibilidade.
+
+ 
+
+O conteúdo a ser disponibilizado na página de acessibilidade de um site governamental pode ser visto no Modelo funcional de Página de Acessibilidade (link para novo site).
+
+Mapa do site
+x
+Um recurso que pode implementar a acessibilidade em site é o Mapa do Site. Assim, recomenda-se que ele seja disponibilizado sempre que o site contiver páginas internas que não estiverem presentes no menu. O mapa do site deve ser disponibilizado em forma de lista hierárquica, podendo conter quantos níveis forem necessários. Assim, o usuário com deficiência visual, tendo acesso ao mapa do site, pode construir uma imagem mental do site mais facilmente. Cada um dos itens presentes no mapa do site deverá ser um link para a página correspondente.
+
+ 
+
+Exemplo de uma parte do mapa do site:
+
+ 
+
+Exemplo de uma parte do mapa do site do Portal da Renapi
+ 
+
+No exemplo acima, todos os itens são links que remetem as suas páginas correspondentes.
+
+ 
+
+É importante salientar que em sites muitos simples, onde os links para as páginas já estão todos presentes no menu, não existe a necessidade de existir mapa do site.
+
+ 
+Saiba Mais sobre a identidade digital do governo
+
+Esses elementos já fazem parte da identidade digital de governo. Visite o site Portal Padrão (link para novo site) para mais detalhes dessa iniciativa.
+
+ 
+
+Esses elementos deverão estar disponibilizados na chamada Barra de Acessibilidade, que deve encontrar-se no topo de todas as páginas:
+
+ 
+
+Exemplo de barra de acessibilidade contendo atalhos, alto contraste e página de acessibilidade.
+
+ 
+
+<div id="acessibilidade"> 
+<ul id="atalhos"> 
+<li><a href="#iniciodoconteudo">Ir para o conteúdo [1]</a></li> 
+<li><a href="#iniciodomenu">Ir para o menu [2]</a></li> 
+<li><a href="#busca">Ir para a busca [3]</a></li> 
+<li><a href="#iniciodorodape">Ir para o rodapé [4]</a></li> 
+</ul> 
+<ul id="botoes"> 
+<li><a href="acessibilidade.html"> Acessibilidade </a></li> 
+<li><a href="#" id="bt_contraste">Alto contraste</a></li> 
+<li><a href="mapa.html"> Mapa do site </a></li> </ul> 
+</div>

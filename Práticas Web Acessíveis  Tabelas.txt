@@ -1,0 +1,153 @@
+As tabelas são utilizadas com a finalidade de disponibilizar dados tabulares, ou seja, para organizar informações em linhas e colunas, e não devem ser usadas para diagramação dos elementos visuais das páginas (design). O uso de tabelas com o propósito de diagramação não influencia apenas no nível de acessibilidade de um site, mas também, na agilidade e desempenho no carregamento de suas páginas. Logo, para estilizar e organizar os aspectos visuais das páginas é recomendado utilizar as folhas de estilo (CSS).
+
+Para pessoas que não possuem deficiência visual a leitura e compreensão das informações contidas nas tabelas ocorre de forma simples, através do cruzamento visual de linhas e colunas, o que permite encontrar rapidamente os dados desejados. Já para usuários de leitores de tela, a obtenção e compreensão dos dados contidos em tabelas não é uma tarefa tão fácil, especialmente se tiverem sido desenvolvidas de forma inacessível.
+
+Sempre que possível, é recomendado utilizar tabelas simples, evitando-se fazer uso de colunas e linhas mescladas ou de células em branco, pois isso dificulta a leitura da tabela por softwares leitores de tela, uma vez que os mesmos realizam a leitura de forma linear, ou seja, linha a linha. Além disso, alguns elementos e atributos são essenciais para a acessibilidade de tabelas, e devem ser empregados de forma lógica e semântica, de modo que venham a cumprir seu real propósito. A seguir, vamos conhecer como podemos implementar a acessibilidade em tabelas.
+
+Título da tabela
+x
+Todas as tabelas necessitam de um título que deve ser fornecido por meio do elemento caption. O uso de outros elementos como h1, p, td ou th pode ter "visualmente" o sentido de título, mas não são semanticamente corretos, e tão pouco, acessíveis. No código HTML o elemento caption deve ser colocado após a marcação table e antes de qualquer outra marcação que seguir. Por padrão, o elemento caption é mostrado centralizado logo acima da tabela. Para modificações no visual deve ser usado o CSS.
+
+Exemplo:
+
+<table summary="..."> 
+<caption>Material escolar</caption> 
+<tr>...segue o resto da tabela...
+
+
+Resumo da tabela
+x
+Em casos de tabelas complexas e extensas, além do título, é preciso oferecer um resumo com os principais dados da tabela, fornecido através do atributo summary. O summary deve vir dentro do elemento table, servindo como informação auxiliar para entendimento da tabela para leitores de tela e displays Braille, não sendo visível em navegadores de interface gráfica. O atributo summary descreve a finalidade da tabela e dá uma indicação de sua estrutura geral.
+
+Exemplo:
+
+<table summary="Material escolar - Levantamento comparativo de preços."> 
+<caption>Material escolar </caption> 
+<tr>...segue o resto da tabela...
+
+Uso apropriado dos elementos th, tr e td
+x
+É importante aplicar de forma apropriada os elementos que demarcam as partes de uma tabela:
+
+th para identificar cabeçalhos em linhas e colunas
+tr para declarar linhas em tabela
+td para declarar o conteúdo das células da linha
+Exemplo:
+
+<table summary="Material escolar - Levantamento comparativo de preços."> 
+<caption>Material escolar</caption> 
+<tr> 
+<th>Estojo caneta hidrocor / loja</th> 
+<th>6 unidades</th> 
+<th>12 unidades</th> 
+<th>24 unidades</th> 
+<th>36 unidades</th> 
+</tr> 
+<tr> 
+<th>Lisboa papelaria</th> 
+<td>R$ 6,20</td> 
+<td>R$ 9,99</td> 
+<td>R$ 11,90</td> 
+<td>R$ 16,90</td> 
+</tr> 
+<tr>...segue o resto da tabela...
+ 
+
+O uso correto dessas marcações permite que os leitores de tela informem aos usuários sobre a função de cada elemento. Dessa forma, o usuário saberá o que é um cabeçalho, o que é uma linha e o que é uma célula de dados.
+
+Elementos thead, tbody e tfoot
+x
+Devem ser utilizados para tabelas extensas, possibilitando o agrupamento de linhas em uma tabela:
+
+thead: aplicado para o agrupamento de linhas de cabeçalho
+tbody: usado para definir o corpo da tabela
+tfoot: utilizado para agrupar linhas de rodapé, demarcando o final de uma tabela
+ 
+
+Exemplo:
+
+<table summary="...."> 
+<caption>.....</caption> 
+<thead> 
+<tr> ...informação contida no cabeçalho... </tr> 
+</thead> 
+<tfoot> 
+<tr>...informação contida no rodapé... </tr> 
+</tfoot> 
+<tbody> 
+<tr> ...primeira linha de dados do bloco um... </tr> 
+<tr> ...segunda linha de dados do bloco um...</tr> 
+</tbody> 
+</table>
+ 
+
+Segundo recomendações do W3C, é sugerido que o tfoot seja declarado no código antes do elemento tbody, permitindo que os agentes de usuário renderizem os resultados da tabela antes de todas as possivelmente numerosas linhas do conteúdo. O emprego dessas marcações de agrupamento permite a fixação das linhas de cabeçalho e rodapé no navegador, possibilitando que o conteúdo ou corpo (tbody) permaneça em movimento entre os limites demarcados. No entanto, esses elementos só irão funcionar caso possuam o mesmo número de colunas.
+
+Associar células de dados às células de cabeçalho
+x
+Para tabelas mais complexas, é muito importante utilizar marcações para associar as células de dados com as células de cabeçalho. Essas associações podem ser realizadas através de:
+
+Atributos id e headers: o atributo headers é utilizado nas células de dados (<td></td>) em conjunto com o atributo id na célula de cabeçalho (<th></th>) para associar as células de dados aos seus respectivos cabeçalhos.
+
+Exemplo:
+
+<table summary="Oferta de cursos - tabela estruturada em: nome do curso, professor, resumo da disciplina e carga horária"> 
+<caption>Oferta de cursos - Primeiro semestre</caption> 
+<tr> 
+<th id="t1" abbr="Nome">Nome do Curso</th> 
+<th id="t2">Professor</th> 
+<th id="t3">Resumo</th> 
+<th id="t4" abbr="carga">Carga horária</th> 
+</tr> 
+<tr> 
+<td header="t1">Gravura - conceitos básicos</td> 
+<td header="t2">Eunice Lobato</td> 
+<td header="t3">História da gravura, estilos, gráfica. Visita aos ateliês.</td> 
+<td header="t4">40h</td> 
+</tr> 
+<tr> 
+<td header="t1">Gravura em metal</td> 
+<td header="t2">Ione Rocha</td> 
+<td header="t3">Trabalhos práticos de gravura em metal. </td>
+<td header="t4">160h</td> 
+</tr> 
+<tr> 
+<td header="t1">Xilogravura</td> 
+<td header="t2">Heli Santos</td> 
+<td header="t3">Trabalhos práticos em xilogravura.</td> 
+<td header="t4">160h</td> 
+</tr> 
+</table>
+Uso do scope e col: a associação é automática, sendo mais utilizada em tabelas de associação direta, onde é dado o valor col para o atributo scope nos cabeçalhos.
+
+Exemplo:
+
+<table summary="Tabela de vendas de maçã e banana efetuadas no ano de 2010"> 
+<caption>Vendas 2010</caption> 
+<tr> 
+<th scope="col">Mês</th> 
+<th scope="colgroup" colspan="2">Rio Grande do Sul</th> 
+<th scope="colgroup" colspan="2">Santa Catarina</th> 
+</tr> 
+<tr> 
+<td>Janeiro</td> 
+<td scope="col">Maçã</td> 
+<td scope="col">Banana</td> 
+<td scope="col">Maçã</td> 
+<td scope="col">Banana</td> 
+</tr> 
+<tr> 
+<td>Fevereiro</td> 
+<td>1000</td> 
+<td>1500</td> 
+<td>3000</td> 
+<td>1000</td> 
+</tr> 
+<tr> 
+<td>Março</td> 
+<td>2000</td> 
+<td>1500</td> 
+<td>3500</td> 
+<td>500</td> 
+</tr> 
+</table>

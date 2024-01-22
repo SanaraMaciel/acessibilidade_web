@@ -1,0 +1,47 @@
+2.9. Práticas Web acessíveis
+Multimídia
+
+Ao disponibilizarmos um arquivo multimídia, é sempre importante garantir que todos possam ter acesso ao seu conteúdo, incluindo pessoas com deficiência visual e as com deficiência auditiva.
+
+Para vídeos que não possuem faixa de áudio é necessário fornecer alternativa em texto, ou seja, disponibilizar, junto ao vídeo, um arquivo para download ou um link para a transcrição textual.
+
+A transcrição textual representa uma alternativa em texto que contém todo o conteúdo de um vídeo, incluindo tanto as informações contidas na faixa de áudio (se esta existir), 
+quanto informações visuais transmitidas durante o vídeo. Assim, além das informações contidas nas falas, é preciso informar todo o conteúdo visual relevante para a 
+compreensão do vídeo, como expressões corporais, risadas, informações em texto, mudança de ambiente, etc. 
+A transcrição é uma alternativa para vídeos muito importante, pois possibilita o acesso a todo o conteúdo de um vídeo tanto para pessoas com deficiência visual, 
+quanto para pessoas com deficiência auditiva, além de pessoas com surdocegueira, que podem acessar o conteúdo da transcrição textual através de um display Braille. 
+Além de essencial para pessoas com deficiência visual e auditiva, a alternativa em texto também é importante para usuários que não possuem equipamento de som, 
+que desejam apenas realizar a leitura do material ou não dispõem de tempo para assistir a um arquivo multimídia.
+
+Para arquivos apenas de áudio, também é essencial fornecer um arquivo para download ou um link para a alternativa textual.
+
+Página com a alternativa textual do vídeo Tableless - dicas de CSS
+
+Caso o vídeo possua faixa de áudio, além da alternativa em texto, devem ser fornecidas legendas. Se necessário, podemos fornecer, ainda, uma faixa de audiodescrição para o vídeo.
+
+As legendas são de fundamental importância para garantir a acessibilidade a pessoas com deficiência auditiva. 
+Legendas são textos sincronizados equivalentes ao conteúdo de áudio. Existem três tipos de legenda:
+
+Closed caption (CC): deverá ser ativada para começar a aparecer no vídeo
+Open caption (OC): está sempre visível
+Real time caption (legenda em tempo real): representam as legendas de vídeo ao vivo, ou seja, são criadas simultaneamente à apresentação do vídeo por pessoal especializado, utilizando softwares e equipamentos especiais.
+Vídeo com exemplo de legenda em tempo real
+
+Além das legendas, muitos vídeos irão exigir uma faixa de audiodescrição para que sejam totalmente acessíveis. A audiodescrição não é a transcrição textual do conteúdo de um vídeo, mas sim uma faixa de áudio que contempla informações que aparecem visualmente, mas não estão presentes nos diálogos ou no áudio do próprio vídeo. Assim, a audiodescrição permite que o usuário tenha acesso a informações visuais que transmitem conteúdo como expressões faciais e corporais, informação sobre o ambiente, efeitos especiais, informações em texto que aparecem no vídeo, etc. A audiodescrição aparece no espaço entre as falas, sem sobrepor o conteúdo em áudio original do vídeo.
+
+Acesse o vídeo da Natura Mamãe e Bebê (link para novo site) para compreender melhor o que é a audiodescrição.
+
+Não podemos esquecer que é sempre desejável que os vídeos com áudio apresentem alternativa na Língua Brasileira de Sinais (Libras).
+
+Vídeo sobre a Amazônia apresentado juntamente com uma intérprete de Libras
+
+É importante, também, que os arquivos multimídia não iniciem automaticamente em uma página. Isto é, um vídeo, por exemplo, não deverá iniciar sem que o usuário tenha acionado um botão para este fim. Assim, para qualquer vídeo, áudio ou animação presente na página, é necessário que sejam fornecidas ferramentas para que o usuário possa iniciar, pausar, reiniciar ou parar a apresentação desses elementos.
+
+Para tal, o player de áudio ou vídeo deve ser acessível. Deve ser possível acessar os controles via teclado e os mesmos devem estar devidamente descritos, para serem interpretados pelos leitores de tela.
+
+Resumo sobre elementos multimídia
+
+Apenas áudio: Sempre fornecer transcrição textual.
+Áudio e vídeo: Sempre fornecer transcrição textual e legendas. Se necessário, fornecer faixa de audiodescrição. Se possível, fornecer alternativa em Libras.
+Todos os elementos (áudio, vídeo, animação): Não deverão iniciar automaticamente. O controle sobre os arquivos multimídia deve ser totalmente do usuário. Ele deverá poder iniciar, pausar, reiniciar ou parar a apresentação de determinado arquivo multimídia quando assim o desejar.
+O player deve ser acessível também por teclado e ter seus controles bem descritos para serem interpretados pelos leitores de tela.

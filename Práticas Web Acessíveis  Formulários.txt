@@ -1,0 +1,270 @@
+2.13. Práticas Web acessíveis 
+Formulários
+
+Ordem de navegação
+x
+Os elementos do formulário devem ser distribuídos corretamente através do código HTML, criando, assim, uma sequência lógica de navegação. 
+Assim, os formulários devem primeiro ser codificados considerando a ordem lógica de navegação para depois serem organizados visualmente através das folhas de estilo.
+
+ 
+
+OBS: O atributo "tabindex" somente deverá ser utilizado quando existir real necessidade. 
+É importante ressaltar que este atributo deverá ser utilizado com a semântica correta e deverá ser verificado manualmente se a ordem de tabulação 
+fornecida pelo tabindex é realmente a desejada.
+
+Utilização do label
+x
+Uma das maneiras mais comuns de navegação entre os campos de formulário é através da tecla Tab. 
+O usuário preenche um campo de formulário, pressiona a tecla Tab, preenche o próximo campo, e assim por diante até chegar ao final do formulário. 
+Para pessoas que enxergam, essa é uma tarefa bastante simples. No entanto, uma pessoa cega, por exemplo, que está navegando utilizando um leitor de tela, 
+irá passar de campo em campo com a tecla Tab sem saber o que fazer nesses campos, a não ser que o formulário tenha sido desenvolvido de maneira que cada campo 
+esteja relacionado a sua informação em texto correspondente. Para realizar tal associação, é utilizado o elemento "label".
+
+ 
+
+As etiquetas de texto ou rótulos (label) devem estar associadas aos seus devidos campos de formulário (input) através do uso dos atributos "for" contido no elemento "label" 
+e do atributo "id" do "input", sendo necessário atribuir o mesmo valor para ambos os atributos para que a associação seja válida.
+
+ 
+
+A tag "label" pode ser usada para todos os elementos de formulário, exceto para os elementos "button" (seu funcionamento independe de links externos).
+
+ 
+
+Exemplo:
+
+<label for="nome">Nome: </label> 
+<input type="text" name="nome" id="nome" /> 
+<label>Sexo:</label> 
+<input type="radio" id="fem" name="sexo" /> 
+<label for="fem">Feminino</label> 
+<input type="radio" id="mas" name="sexo" /> 
+<label for="mas">Masculino</label> 
+<label for="msg">Mensagem: </label> 
+<textarea name="msg" id="msg">Digite sua mensagem</textarea> 
+<input type="checkbox" id="receber" name="receber" /> 
+<label for="receber">Deseja receber nossa newsletter?</label>
+ 
+
+Para campos que exigem entrada de dados por parte do usuário, devem ser oferecidas, quando necessário, dicas de preenchimento que devem estar junto aos rótulos dos campos (label).
+
+Agrupamento de campos
+x
+Visando melhor organização do formulário, é recomendado o agrupamento de campos que possuem características comuns e que estão relacionados de maneira lógica, utilizando-se o elemento "fieldset", juntamente com o elemento "legend". Para cada um dos agrupamentos (fieldset) é possível fornecer uma legenda (legend) que deve explicar clara e objetivamente a finalidade ou natureza dessas uniões.
+
+ 
+
+Exemplo:
+
+<form method="post" action="..."> 
+<fieldset> 
+<legend>Dados Pessoais</legend> 
+<label for="nome">O seu Nome: </label> 
+<input type="text" name="nome" id="nome" /> 
+... 
+</fieldset> 
+<fieldset> 
+<legend>Dados Profissionais</legend> 
+<label for="profissao">Sua profissão:</label> 
+<input type="text" id="profissao" name="profissao" /> 
+... 
+</fieldset> 
+<fieldset> 
+<legend>Informaçõesde Contato</legend> 
+<label for="email">E-mail: </label> 
+<input type="text" id="email" name="email" /> 
+... 
+</fieldset> 
+</form>
+ 
+
+Outro tipo de agrupamento se dá por meio do uso do elemento "optgroup", que possui finalidade semelhante ao "fieldset", e agrupa os elementos options pertencentes ao elemento "select". Cada "optgroup" recebe um atributo "label" que identifica o agrupamento criado.
+
+ 
+
+Exemplo:
+
+<label for="instituto">Qual a sua instituição?</label> 
+<select id="instituto" name="instituto"> 
+<optgroup label="Rio Grande do Sul"> 
+<option value="ifrs">IFRS</option> 
+<option value="ifsul">IFSUL</option> 
+<option value="iffarroupilha">IFFarroupilha</option> 
+</optgroup> 
+<optgroup label="Santa Catarina"> 
+<option value="ifsc">IFSC</option> 
+<option value="ifc">IFC</option> 
+</optgroup> 
+<optgroup label="Paraná"> 
+<option value="ifpr">IFPR</option> 
+</optgroup> 
+</select>
+
+Campos obrigatórios
+x
+ 
+
+Formulário solicitando dados pessoais onde os campos obrigatórios aparecem com a cor vermelha
+ 
+
+Repare que o formulário acima indica os campos obrigatórios apenas através da mudança de cor. Um usuário que não pode ver, não saberá quais campos são de preenchimento obrigatório.
+
+ 
+
+Uma solução para o caso de campos obrigatórios em formulários seria inserir um asterisco em forma de imagem ao lado de cada campo obrigatório, fornecendo uma descrição no atributo alt para esta imagem, que poderia ser "campo obrigatório" ou, simplesmente, "obrigatório".
+
+ 
+
+<label for="nome">Nome: 
+<img src="images/icon_asterisk.gif" alt="obrigatório"/> 
+</label> 
+<input type=text name="nome" id="nome" />
+ 
+
+Para quem enxerga, basta visualizar o asterisco para distinguir os campos obrigatórios. Com o leitor de tela, a informação do alt seria lida para o usuário. No caso do exemplo de código acima, o leitor iria informar algo do tipo: "Campo de edição, nome, obrigatório".
+
+ 
+
+Outra solução é utilizar uma tag span contendo a informação "obrigatório", que será ocultada por CSS e, em seu lugar, inserimos uma imagem de um asterisco.
+
+ 
+
+<label for="nome">Nome: 
+<span>Obrigatório<span/> 
+</label> 
+<input type=text name="nome" id="nome" />
+ 
+
+Obs.: Mecanismos para ocultar elementos e seus efeitos na acessibilidade:
+
+ 
+
+Mecanismos para ocultar elementos e seus efeitos na acessibilidade.
+CSS	Efeito na tela	Efeito na acessibilidade
+visibility:hidden;	O elemento fica oculto, mas continua a ocupar o espaço que normalmente ocuparia	O conteúdo é ignorado pelos leitores de tela
+display:none;	O elemento fica oculto e não ocupa espaço	O conteúdo é ignorado pelos leitores de tela
+height: 0; width: 0; overflow: hidden;	O elemento fica oculto e não ocupa espaço	O conteúdo é ignorado pelos leitores de tela
+text-indent: -999em;	O conteúdo é movido para "fora da tela", não sendo mais visível, mas links podem ser focalizados de maneira imprevisível	Os leitores de tela acessam o conteúdo, mas somente texto e elementos inline
+position: absolute; left: -999em;	O conteúdo é removido de sua posição, não ocupando espaço e é movido para "fora da tela", ficando oculto	Os leitores de tela acessam o conteúdo
+
+
+Alterações automáticas
+x
+Quando campos ou elementos de um formulário receberem foco, não devem ser iniciadas alterações automáticas na página que confundam ou desorientem os usuários. Logo, as mudanças devem ocorrer através do acionamento de botões, permitindo que os usuários tenham total controle do formulário.
+
+ 
+
+Exemplo Correto:
+
+ 
+
+<select id="cidade" name="cidade"> 
+<option value="POA">Porto Alegre</option> 
+<option value="BH">Belo Horizonte</option> 
+<option value="RJ">Rio de Janeiro</option> 
+<option value="SP">São Paulo</option> 
+</select> 
+<input type="submit" id="submit" value="Enviar" />
+ 
+
+Caixa de seleção contendo cidades brasileiras e um botão de "Enviar" ao lado
+ 
+
+Exemplo Incorreto:
+
+ 
+
+<select name="cidade" id="cidade" onchange="location = 
+this.options[this.selectedIndex].value;"> 
+<option value="POA">Porto Alegre</option> 
+<option value="BH">Belo Horizonte</option> 
+<option value="RJ">Rio de Janeiro</option> 
+<option value="SP">São Paulo</option> 
+</select>
+ 
+
+Botões de imagem
+x
+São elementos input do tipo image (input type="image"). Para os botões de imagem que servem para o mesmo propósito do botão do tipo submit, deve ser fornecida uma descrição textual para o botão através do atributo alt, conforme o exemplo a seguir.
+
+ 
+
+Imagem decorativa contendo uma seta e a palavra "Entrar" utilizada em forma de um botão
+<input type="image" name="entrar" src="entrar.jpg" alt="entrar" />
+ 
+
+Já para outros tipos de botões (reset, submit e button), é preciso substituir o botão pela imagem que se deseja utilizar através do CSS, já que o comportamento dos leitores de tela quanto ao atributo alt nesses tipos de botões é bastante variável. Nesse caso, para que o botão seja acessível, ele deve possuir um value descritivo, conforme o exemplo a seguir.
+
+ 
+
+Imagem decorativa contendo a palavra "Limpar" utilizada em forma de um botão
+ 
+
+HTML:
+
+ 
+
+<input type="reset" name="limpar" value="Limpar" class="btLimpar"/>
+ 
+
+CSS:
+
+ 
+
+input.btLimpar{ 
+background:transparenturl(btLimpar.jpg) no-repeat left top; 
+width:100px; 
+height:47px; 
+text-indent:-20000px; 
+border:0; 
+}
+
+
+Aviso de erro
+x
+ 
+
+Quando um erro de entrada de dados for automaticamente detectado, seja pelo não preenchimento de campos obrigatórios, ou pelo preenchimento incorreto de algum campo, o item que apresenta erro deve ser identificado e o usuário deve ser informado sobre o erro por meio de texto. Após o envio das informações, caso exista algum campo incorreto, o mesmo deve receber o foco, e nele deverá conter uma mensagem informando claramente ao usuário o real motivo do problema, para que esse possa ser resolvido, permitindo o envio dos dados.
+
+ 
+
+Exemplo:
+
+ 
+
+O usuário envia o formulário e deixa de preencher campos obrigatórios ou preenche algum campo de maneira incorreta. O foco retorna ao início do formulário contendo o aviso de erro e links (âncoras) para os campos do formulário que apresentaram erro. Abaixo dos avisos, encontram-se os campos de formulário que contiveram erro de preenchimento e, também, um link que permite ao usuário expandir os demais campos do formulário.
+
+ 
+
+retorno com a lista de avisos e campos de formulário que apresentaram erro de preenchimento
+ 
+
+Após a validação dos dados, antes de enviar o formulário, uma tela de confirmação deverá aparecer, conforme no exemplo a seguir, permitindo que o usuário verifique e, se necessário, edite as informações antes de enviá-las.
+
+ 
+
+tela de confirmação dos dados, com botões "editar" e "enviar"
+
+
+CAPTCHA
+x
+O CAPTCHA é um teste interativo humano, completamente automatizado para diferenciar computadores de seres humanos. Os CAPTCHAS comuns fazem uso de imagens que expressam símbolos e caracteres. Esse tipo de CAPTCHA não é interpretado e lido pelos softwares leitores de tela. Logo, esse recurso somente deverá ser utilizado em casos de extrema necessidade, e, quando utilizado, deverá ser disponibilizada em forma alternativa, podendo ser de perguntas de interpretação ou testes matemáticos que só poderão ser respondidas por seres humanos. Essas perguntas devem ser simples, permitindo que possam ser respondidas por variados tipos de usuários, de diferentes culturas e níveis de instrução.
+
+ 
+
+Exemplo:
+
+ 
+
+<form action="action.php" method="post"> 
+<fieldset> 
+<legend>CAPTCHA</legend> 
+<label for="pergunta">Escreva por extenso quanto é dois mais três.</label> 
+<input type="text" id="pergunta" name="pergunta" /> 
+<input type="submit" name="enviar" value="Enviar!" /> 
+</fieldset> 
+</form>
+ 
+
+Caixa de edição com CAPTCHA perguntando ao usuário quanto é dois mais três
+

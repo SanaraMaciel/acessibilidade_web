@@ -1,0 +1,127 @@
+2.7. Práticas Web acessíveis 
+Conteúdo/Informação
+
+Idioma
+x
+O idioma principal do site deve ser declarado em todas as páginas, já que auxilia na acessibilidade e melhora a indexação pelos motores de busca.
+
+Exemplos:
+
+Em HTML 4.01
+
+<html lang="pt-BR"> 
+<head><br/ > <title>documento escrito em português do Brasil</title>
+Em XHTML 1.1
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR" lang="pt-BR"> 
+<head> 
+<title>documento escrito em português do Brasil</title>
+Em HTML5
+
+<html lang="pt-br"> <head> <title>documento escrito em português do Brasil</title>
+Quando houver mudança de idioma no conteúdo, o ideal é sempre identificar a mudança através do atributo “lang”. Não há necessidade de informar a mudança de idioma para nomes próprios ou termos técnicos que sejam compreendidos no contexto.
+
+Exemplos:
+
+Em XHTML
+
+<p xml:lang="de"> 
+Da dachte der Herr daran, ihn aus dem Futter zu schaffen, aber der Esel merkte, daß kein guter Wind wehte, lief fort und machte sich auf den Weg nach Bremen: dort, meinte er, könnte er ja Stadtmusikant werden. </p>
+Em HTML
+
+<p lang="de"> 
+Da dachte der Herr daran, ihn aus dem Futter zu schaffen, aber der Esel merkte, daß kein guter Wind wehte, lief fort und machte sich auf den Weg nach Bremen: dort, meinte er, könnte er ja Stadtmusikant werden. 
+</p> 
+<p> O leitor de tela <span lang="en">JAWS</span> (acrônimo para <span lang="en">Job Access With Speech</span>) é um software desenvolvido pela empresa americana <span lang="en">FreedomScientific</span> e é, atualmente, um dos mais populares no mundo. 
+Trata-se de um <span lang="en">software pago</span>, 
+desenvolvido para o sistema operacional 
+<span lang="en">Microsoft Windows</span>. 
+</p>
+
+Título da página
+x
+O título da página é a primeira informação que será lida para quem utiliza leitor de tela, devendo ser descritivo e informativo, de modo que represente o conteúdo principal da página. O título é informado pelo elemento “title” e deve contemplar o assunto da página e o nome do site.
+
+Exemplos:
+
+Página inicial do Ministério da Educação:
+
+<title> 
+Ministério da Educação 
+</title>
+Página interna “Publicações” do site do Ministério da Educação:
+
+<title> 
+Publicações – Ministério da Educação 
+</title>
+
+Localização do usuário no site
+x
+As páginas internas do site devem disponibilizar o caminho das páginas percorridas, através de mecanismos que possibilitem ao visitante orientar-se dentro de um conjunto de páginas. O caminho percorrido deve oferecer uma lista de links organizados hierarquicamente, permitindo ao usuário saber qual o caminho cursado até a página atual. Nos breadcrumbs todos os elementos, com exceção da localização atual, deverão estar no formato de links, estando o conjunto desses precedido por expressões que o identifique como, por exemplo, “Você está em:”, conforme podemos ver no exemplo a seguir:
+
+Página conheça o projeto contendo no seu topo o caminho da localização da página no site 
+
+Documentos para Download
+
+Assim como o conteúdo de um site deve ser acessível, o material disponibilizado para download também precisa ser. Um dos formatos mais acessíveis é o próprio HTML e, por isso, sempre que possível, disponibilize documentos neste formato. Também podem ser utilizados arquivos para download no formato ODF - Open Document Format , tomando-se os cuidados para que sejam acessíveis. Se um arquivo for disponibilizado em PDF - Portable Document Format , deverá ser fornecida uma alternativa em HTML ou ODF. É necessário, também, informar a extensão e o tamanho do arquivo no próprio texto do link.
+
+Exemplo
+<a href="manual.odt"> Manual do W3C (formato .odt, tamanho 150Kb) </a>
+O ODF é um formato aberto de documento que pode ser implementado em qualquer sistema. Atualmente existem diversos softwares, pagos ou gratuitos, que permitem a utilização de documentos ODF, suportados em diversos sistemas operacionais. O ODF engloba formatos como:
+
+ODT para documentos de texto
+ODS para planilhas eletrônicas
+ODP para apresentações de slides
+Muitos softwares já utilizam esses formatos, como é o caso do OpenOffice (LibreOffice), BrOffice, Google Docs, Abiword e StarOffice. O Microsoft Office 2010 também inclui suporte para ODF. Para versões anteriores do Microsoft Office, pode ser instalado um Add-in gratuito para suporte aos formatos ODF.
+
+Se forem utilizados ícones para arquivos, é importante utilizar imagens e descrições de forma consistente dentro de um mesmo site, evitando confusão:
+
+Utilização inconsistente
+
+Página 1
+
+Arquivo odt / pdf
+Página 2
+
+arquivo em pdf / download de odt
+Utilização consistente
+
+Página 1
+
+Arquivo odt / Arquivo pdf
+Página 2
+
+Arquivo odt / Arquivo pdf
+
+Texto
+x
+Acessibilidade também consiste em garantir que um texto possa ser compreendido por todos. Assim, o texto de um site deverá ser fácil de ler e compreender.
+
+Algumas técnicas que podem auxiliar neste sentido incluem:
+
+Desenvolver apenas um tópico por parágrafo
+Utilizar sentenças organizadas de modo simplificado para o propósito do conteúdo (sujeito, verbo e objeto, preferencialmente)
+Dividir sentenças longas em sentenças mais curtas
+Evitar o uso de jargão, expressões regionais ou termos especializados que possam não ser claros para todos
+Utilizar palavras comuns no lugar de outras pouco familiares
+Utilizar listas de itens ao invés de uma longa série de palavras ou frases separadas por vírgulas
+Fazer referências claras a pronomes e outras partes do documento
+Utilizar, preferencialmente, a voz ativa.
+Exemplo:
+
+Repare no texto a seguir:
+
+"Como exemplos de leitores de tela podemos citar o JAWS, que é um dos mais populares no mundo para Windows, mas é um software pago, o NVDA, o qual é gratuito e de código aberto para Windows, o ORCA, que também é gratuito e de código aberto, mas para Linux e o Virtual Vision, que é um leitor de tela pago para ambiente Windows, desenvolvido pela empresa brasileira MicroPower. Mais informações sobre esses leitores podem ser encontradas nos seus respectivos sites: http://www.freedomscientific.com/products/fs/jaws-product-page.asp (link para novo site), http://www.nvda-project.org (link para novo site), http://live.gnome.org/Orca (link para novo site) e http://www.virtualvision.com.br (link para novo site)."
+
+O texto acima pode ser apresentado de maneira mais clara e fácil de compreender através de pequenas modificações, como a utilização de listas de itens e a padronização na linguagem e na forma de apresentação:
+
+"Como exemplos de leitores de tela podemos citar:
+
+JAWS: software pago para Windows, sendo um dos mais populares pelo mundo (site do Jaws (link para novo site));
+NVDA: software gratuito e de código aberto para Windows (site do NVDA (link para novo site));
+ORCA: software gratuito e de código aberto para Linux (site do Orca (link para novo site));
+Virtual Vision: software pago para Windows, desenvolvido pela empresa brasileira MicroPower (site do Virtual Vision (link para novo site))."
+Quando o texto incluir palavras incomuns, termos técnicos, palavras ou frases em outro idioma, etc., deverá ser fornecida uma explicação para tais palavras. Também deverão ser fornecidas as formas completas ou o significado de siglas e abreviaturas, ao menos na primeira vez em que aparecerem no texto.
+
+As definições poderão ser fornecidas através de um texto adjacente, uma lista de definições, um glossário, ou de qualquer outro modo.
+

@@ -1,0 +1,118 @@
+2.10. Práticas Web acessíveis
+Links
+
+Muitas pessoas utilizam apenas o mouse para navegar e nem imaginam que é possível navegar através da tecla TAB do teclado pelos elementos ativos de uma página. 
+Isso inclui a navegação de link em link. Quando o usuário chega ao link desejado, basta ativá-lo através da tecla ENTER. 
+Esse tipo de navegação é especialmente importante para pessoas que não conseguem utilizar o mouse, 
+como é o caso de pessoas com problemas motores e de usuários com deficiência visual, que navegam utilizando um leitor de tela. 
+É preciso considerar que, quando um usuário de leitor de tela navega pelos links de uma página, recebe apenas a informação do texto do link e não de todo o seu contexto. 
+Por isso, o título do link deve descrever o seu destino. Veja o exemplo a seguir:
+
+Lista de notícias elencadas onde o link para continuar lendo é apenas "Leia Mais" ao final de cada notícia
+
+ 
+
+No exemplo acima, o usuário navegando de link em link receberia a seguinte informação do leitor de tela: "Leia mais, link", "Leia mais, link", "Leia mais, link". 
+O usuário provavelmente não acessaria estes links, pois não saberia qual o seu destino. Ele iria perguntar-se "Leia mais sobre o quê?". 
+Uma solução neste caso seria retirar o link "Leia mais" e transformar o próprio título da notícia em link, conforme o exemplo a seguir:
+
+ 
+
+Lista de notícias elencadas onde o link para continuar lendo é o próprio título de cada notícia
+
+ 
+
+Assim, o texto de cada um dos links torna-se suficientemente claro e descritivo. 
+Quando o usuário de leitor de tela passar pelo primeiro link, por exemplo, receberá a informação "Projeto Arte na Escola: coordenadora recebe prêmio, link". 
+Assim, ele saberá que se trata de um link e saberá qual o seu destino, podendo decidir se deseja ou não acessá-lo.
+
+ 
+
+Da mesma forma que o "Leia mais" é problemático para navegação com leitor de tela, links do tipo "Clique aqui" e "Saiba mais" também o são, 
+pois não descrevem o destino do link. Assim, este tipo de link deve ser evitado.
+
+ 
+
+A maioria dos leitores de tela possui uma tecla de atalho que permite ao usuário acessar a lista de todos os links da página. 
+É uma maneira fácil e rápida de ter acesso aos links. No entanto, se o texto dos links não for suficientemente descritivo, essa funcionalidade terá pouco valor. 
+No exemplo a seguir podemos ver uma parte da lista de links de uma página. Repare que existem vários links com o título "Leia Mais". 
+O usuário irá navegar por esses links e irá se perguntar "leia mais sobre o quê?". O ideal para tornar esses links acessíveis é lhes fornecer um texto descritivo, como, 
+por exemplo, o próprio título da notícia ou, até "leia mais sobre acessibilidade".
+
+ 
+
+Lista de links contendo vários links "Leia Mais"
+
+ 
+
+Quando o seu conteúdo contiver um link, é preciso que o mesmo seja claro e descritivo o suficiente, mesmo quando lido fora do contexto.
+
+Exemplo de link suficientemente descritivo: Organograma da empresa
+
+Exemplo de link com informações desnecessárias: Clique aqui para acessar o organograma da empresa
+
+Exemplo de link com texto pouco descritivo: Clique aqui para acessar o organograma da empresa
+
+ 
+
+Não há necessidade de colocar no texto do link frases como "clique aqui para...", "link para...", etc. Tanto visualmente quanto com o leitor de tela, 
+já fica claro para o usuário que se trata de um link.
+
+É muito importante, também, que os links abram na guia ou janela atual de navegação, pois os usuários com deficiência visual podem ter dificuldade em identificar 
+que uma nova janela foi aberta. Quando é realmente necessária a abertura de um link em nova janela, é recomendado que tal ação seja informada ao usuário no próprio texto do link
+. Isso permite ao usuário decidir se quer ou não sair da janela ou aba em que se encontra e, caso decida acessar o link, ele saberá que estará em uma nova aba ou janela.
+
+ 
+
+Exemplo
+
+<a href="universal.html"> Desenho Universal (abre nova janela) </a>
+ 
+
+Em links para download de documentos é necessário informar a extensão e o tamanho do arquivo no próprio texto do link.
+
+<a href="manual.odt"> Manual do W3C (formato .odt, tamanho 150Kb) </a>
+ 
+
+Outra recomendação importante com relação aos links é possibilitar que o usuário possa perceber visualmente qual link está recebendo o foco.
+Por padrão, links e elementos de formulário já apresentam uma borda destacada ao receberem foco. 
+Assim, recomenda-se que essa borda não seja removida, mas ela poderá ser modificada (de preferência, intensificada) através do CSS, conforme o exemplo a seguir.
+
+CSS:
+
+a:active, a:focus, a:hover { 
+border: 1px solid #F00; 
+}
+HTML:
+
+<ul>
+<li><a href="/acessibilidade/index.php">Página Inicial</a></li>
+<li><a href="/acessibilidade/eventos.php">Eventos</a></li>
+<li><a href="/acessibilidade/quemsomos.php">Quem Somos</a></li>
+<li><a href="/acessibilidade/ead.php">Ensino a Distância (EaD)</a></li>
+<li><a href="/acessibilidade/videoaulas.php">Vídeoaulas</a></li>
+<li><a href="/acessibilidade/video.php">Vídeo em Libras</a></li> 
+<li><a href="/acessibilidade/oa.php">Objetos de Aprendizagem</a></li> 
+<li><a href="/acessibilidade/trabalhos.php">Trabalhos Realizados</a></li>
+<li><a href="/acessibilidade/mapa.php">Mapa do Site</a></li> 
+</ul>
+ 
+
+Itens de menu com o link "Eventos" sendo focalizado com uma borda vermelha
+
+ 
+
+A pseudo-classe:focus é utilizada para definir o estilo de qualquer elemento HTML que receber o foco do teclado, como links e elementos de formulário. 
+A pseudo-classe:hover é utilizada para definir o estilo de um elemento quando passa-se o mouse sobre ele. J
+á a pseudo-classe:active define o estilo de link ativo. 
+No caso do exemplo acima, a pseudo-classe:active foi utilizada para definir o estilo do link com foco para navegadores Internet Explorer 7 e anteriores, 
+que ainda não tinham suporte à pseudo-classe:focus.
+
+Resumo sobre links
+
+O texto do link deve ser claro e descritivo
+O link deve ser compreensível mesmo fora de contexto
+Evitar links do tipo "clique aqui", "leia mais", "saiba mais", etc.
+Evitar abertura de nova aba ou janela
+Informar a extensão e o tamanho do arquivo no texto do link para download
+Permitir que o elemento com foco seja percebido visualmente.

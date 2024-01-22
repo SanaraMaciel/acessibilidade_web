@@ -1,0 +1,199 @@
+2.11. Práticas Web acessíveis 
+Imagens
+A imagem abaixo ilustra o organograma da instituição:
+
+Imagem sem nenhum conteúdo visual com o fundo preto
+Você conseguiu compreender a imagem?
+
+No contexto acima, se faltar a imagem, não conseguimos compreender a informação. O mesmo ocorre no caso de pessoas cegas tentando acessar o conteúdo presente em imagens que não foram descritas.
+
+Pessoas cegas não terão acesso ao conteúdo transmitido por uma imagem caso não tenha sido fornecida uma descrição para ela. Dessa forma, é preciso descrever de maneira apropriada todas as imagens que transmitem conteúdo.
+
+Uma imagem pode ou não transmitir uma informação. Podemos tratar as imagens inseridas em uma página dividindo-as nos dois contextos abaixo:
+
+Imagens com conteúdo: fotos, gráficos, organogramas, ilustrações, imagens que substituem botões ou links, etc.
+
+As imagens que apresentam conteúdo precisam de uma descrição. A descrição da imagem pode ser informada no próprio texto ou, então, através de um atributo específico do elemento img no HTML, o atributo alt. A descrição fornecida através deste atributo não aparece visualmente, mas é lida pelo leitor de tela quando o usuário, navegando pelo teclado, passar pela imagem. Assim, mesmo que os usuários com deficiência visual não enxerguem a imagem, lhes será informada a sua descrição.
+
+Imagens decorativas: utilizadas para decorar a página ou partes dela. Como exemplos, podemos citar marcadores de lista estilizados, cantos arredondados, ícones utilizados para decorar ou enfatizar um link, etc.
+
+As imagens decorativas devem ser ignoradas pelos recursos de tecnologia assistiva, ou seja, o ideal é que os leitores de tela ignorem a presença dessas imagens, 
+já que elas não transmitem conteúdo. Para que isso ocorra, a maneira mais indicada é inserir todas as imagens decorativas através das folhas de estilo (CSS). 
+Como alternativa, pode-se deixar o conteúdo do atributo alt vazio (alt=””), para que a imagem seja ignorada pelos leitores de tela.
+
+Mas qual o limite para uma descrição ser considerada curta e poder ser disponibilizada através do atributo alt?
+
+Não existe uma restrição oficial para o tamanho do texto alternativo fornecido no alt, mas especialistas recomendam que ele seja inferior a 125 caracteres, aproximadamente.
+
+Imagens complexas
+x
+O exemplo a seguir apresenta um gráfico que foi inserido em forma de imagem. Quem não pode ver, não terá acesso às suas informações. Nesse caso, primeiramente, precisamos fornecer uma alternativa textual para a imagem no atributo alt. No entanto, este atributo é utilizado para descrições sucintas, em poucas palavras ou em uma frase curta.
+
+No caso de gráficos e imagens complexas precisamos fornecer uma descrição mais detalhada. A solução, nestes casos, é fornecer as informações do gráfico no próprio contexto antes ou depois da imagem ou então em um link logo após a imagem. Conforme podemos ver no exemplo abaixo, foi fornecida uma breve descrição para a imagem no atributo alt e, além disso, foi fornecido o link para a descrição detalhada do gráfico. Neste link, o usuário terá acesso aos dados do gráfico em forma textual.
+
+Gráfico com o nível de escolaridade dos usuários de nosso site
+<img src="grafico.jpg" alt="Gráfico demonstrativo do nível de escolaridade dos usuários" /> 
+<p><a href="graficoPesquisa.html">A descrição textual do gráfico</a> está disponível em outra página</p>
+ 
+
+Ao desabilitarmos as imagens do navegador, podemos visualizar os textos alternativos:
+
+Caixa de busca de um site comparando a apresentação com e sem as imagens ativadas no navegador
+
+Imagens que são links
+x
+Quando um usuário com leitor de tela passa por um link, ele é informado pelo leitor que aquele elemento é um link e lhe é informado o texto do mesmo. No entanto, se quisermos substituir um link por uma imagem, o ideal é que o façamos através do CSS, de modo que o texto do link continue sendo lido normalmente pelo leitor de tela.
+
+Caso não seja possível substituir o link pela imagem através do CSS, é necessário que a imagem possua um texto alternativo (alt). É preciso que o texto alternativo seja curto e objetivo, representando o seu destino. No exemplo abaixo, o texto no atributo alt deve ser simplesmente “livros”, o mesmo texto que aparece visualmente na imagem.
+
+Imagens que são botões
+x
+São elementos input do tipo image (input type="image"). Para os botões de imagem que servem para o mesmo propósito do botão do tipo submit, deve ser fornecida uma descrição textual para o botão através do atributo alt, conforme o exemplo a seguir.
+
+Imagem decorativa contendo uma seta e a palavra "Entrar" utilizada em forma de um botão
+<input type="image" name="entrar" src="entrar.jpg" alt="entrar" />
+ 
+
+Já para outros tipos de botões (reset, submit e button), é preciso substituir o botão pela imagem que se deseja utilizar através do CSS, já que o comportamento dos leitores de tela quanto ao atributo alt nesses tipos de botões é bastante variável. Nesse caso, para que o botão seja acessível, ele deve possuir um value descritivo, conforme o exemplo a seguir.
+
+Imagem decorativa contendo a palavra "Limpar" utilizada em forma de um botão
+HTML:
+
+<input type="reset" name="limpar" value="Limpar" class="btLimpar"/>
+ 
+
+CSS:
+
+input.btLimpar{ 
+background:transparenturl(btLimpar.jpg) no-repeat left top; 
+width:100px; 
+height:47px; 
+text-indent:-20000px; 
+border:0; 
+}
+
+Imagens decorativas
+x
+A ideia é que as imagens decorativas sejam ignoradas pelos leitores de tela. Para tal, essas imagens devem ser inseridas por CSS.
+
+Um exemplo de imagem decorativa são os marcadores estilizados para listas (na figura a seguir, as setas na cor laranja). No exemplo abaixo, essas imagens foram inseridas por CSS.
+
+ 
+
+Lista com 3 itens onde é utilizada setas para indicações de cada item
+ 
+
+HTML:
+
+<ul class="bullet" > 
+<li>Item de lista 1</li> 
+<li>Item de lista 2</li> 
+<li>Item de lista 3</li> 
+</ul>
+ 
+
+CSS:
+
+#content ul.bullet li { 
+list-style-type: none; 
+text-align: center left; 
+background-image: url(../images/ex-list-bullet.PNG); 
+background-position: center left; 
+background-repeat: no-repeat; 
+padding: .3em 0 .2em 1.1em; 
+} 
+#content ul.bullet { 
+margin: 0 0 .3em -.5em; 
+}
+ 
+
+Como segunda opção, imagens sem conteúdo que não foram inseridas por CSS devem ter o atributo alt nulo (alt="") e não apresentar atributo title. O atributo alt com valor nulo indica ao leitor de tela que a imagem em questão pode ser ignorada. No exemplo a seguir, temos um link que é formado pelo texto do link ("Contato") e por um ícone (imagem de um telefone). Essa imagem está inserida no código dentro da tag <a>. O texto do link é "contato", informação esta que é suficientemente descritiva. Se fosse fornecida uma descrição para a imagem, o leitor de tela iria "ler" para o usuário informações desnecessárias. Assim, para que o leitor de tela ignore a imagem e leia simplesmente o texto do link, deixamos o alt da imagem nulo. Vale lembrar que o mais recomendado é inserir a imagem por CSS.
+
+ 
+Imagem decorativa contendo um telefone e a palavra "Contato" utilizada em forma de um link
+ 
+
+<a href="contact.html"> 
+<img src="phoneicon.gif" alt="" /> 
+Contato 
+</a>
+
+
+Mapas de imagem
+x
+Um mapa de imagem é uma imagem dividida em áreas selecionáveis. Cada área é um link para outra página ou para outra parte da mesma página. Um exemplo de um mapa de imagem seria a imagem de uma estante de livros onde cada prateleira seria um link para um tipo específico de literatura.
+
+ 
+
+Para que um mapa de imagem seja acessível, é preciso fornecer uma alternativa em texto para cada uma de suas áreas selecionáveis.
+
+ 
+
+Exemplo 1 – Mapa de imagem do lado do cliente
+
+Imagem apresentando uma separação, onde do lado esquerdo é apresentado a "letra A" e do lado direito a "letra B"
+<img src="mapaImg.jpg" alt="Imagem com alternativas A e B" usemap="#Map"/> 
+<map name="Map" id="Map"> 
+<area shape="rect" coords="8,10,63,59" href="a.html" alt="Link para a seção A"/> 
+<area shape="rect" coords="77,9,126,61" href="b.html" alt="Link para a seção B"/> 
+</map>
+ 
+
+Exemplo 2 – Mapa de imagem do lado do servidor
+
+É recomendada a utilização de mapas de imagem do lado do cliente, já que para mapas de imagem do lado do servidor não é possível fornecer um alt para cada uma das zonas ativas, somente para o mapa como um todo. Dessa forma, se a opção for por utilizar um mapa de imagem do lado do servidor, será preciso fornecer links redundantes relativos a cada uma das áreas selecionáveis.
+
+ 
+
+Imagem apresentando uma mapa do sul do Brasil, com separação entre os estados do Paraná, Santa Catarina e Rio Grande do Sul
+
+Resumo sobre imagens
+x
+ 
+
+Todas as imagens que transmitem informação devem possuir uma descrição indicando seu conteúdo.
+Para imagens que exigem uma descrição mais extensa, deve ser fornecido um texto sucinto no atributo alt e a descrição detalhada no próprio contexto ou em um link adjacente.
+Imagens decorativas devem ser inseridas por CSS.
+
+Dicas para descrever uma imagem
+x
+Quando for descrever uma imagem, pergunte-se: “se eu não pudesse utilizar esta imagem aqui, o que eu escreveria em seu lugar?”
+
+ 
+
+ 
+
+Seja objetivo: apesar de parecer uma boa ideia descrever uma imagem nos mínimos detalhes, na maioria das vezes não existe essa necessidade. Busque informar simplesmente o que ela transmite, nem a menos e nem a mais. Deixe de lado detalhes pouco importantes e evite informar no texto alternativo mais do que a imagem está passando visualmente. Veja o exemplo a seguir:
+ 
+
+Foto de rochas em uma praia da costa do estado de Oregon
+ 
+
+Esta imagem tem a seguinte descrição:
+
+ 
+
+<img src="beach.jpg" alt="Foto de rochas em uma praia da costa do estado de Oregon" />
+ 
+
+Repare que, apenas olhando para a foto, a maioria das pessoas não saberia onde fica esta praia. Ou seja, o texto alternativo está informando mais do que a própria imagem passa visualmente. Um exemplo de texto alternativo apropriado para esta imagem seria:
+
+ 
+
+<img src="beach.jpg" alt="Foto de uma praia com um pouco de areia e grandes rochas dentro do mar" />
+ 
+
+Seja claro: tome cuidado para não ser tão objetivo a ponto de seu texto não ficar claro o suficiente. Veja o exemplo a seguir:
+ 
+
+Plantação de Eucaliptos
+Descrição muito objetiva e pouco clara: alt="árvores" ou alt="floresta"
+
+Descrição objetiva e clara: alt="plantação de eucaliptos"
+
+Descrição pouco objetiva: alt="eucaliptos com caules muito longos e folhas verdes plantados em fileira e fazendo sombra sobre a grama"
+
+ 
+
+Considere o contexto: Procure não repetir na descrição da imagem informações que já estão no contexto, evitando que o leitor de tela leia duas vezes a mesma informação. No exemplo abaixo, não é necessário descrever as informações sobre inscrições e provas divulgadas na imagem, já que esta informação já está no contexto. Poderíamos inserir no alt apenas a informação “Banner do processo seletivo 2014/1”. No entanto, se esta informação não estivesse no contexto, teríamos que descrever as informações de inscrições e provas.
+ 
